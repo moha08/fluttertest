@@ -4,6 +4,7 @@ class Answer extends StatelessWidget {
   
   final Function answerFun;
   Answer(this.answerFun);
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,6 +12,7 @@ class Answer extends StatelessWidget {
         child: Text("Answer 1"),
         onPressed: answerFun,
         focusColor: Colors.blue[300],
+        color: Colors.blue,
       ),
     );
   }
