@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
+import './result.dart';
 
 /* void main() {
   runApp(MyApp());
@@ -17,14 +17,15 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   var questionIndex = 0;
-  var questionList = [
+  final questionList = const [
     {
       'questionText': 'What is your favourite color?',
-      'answer': ['Black', 'Blue', 'Red']
+      'answer': [{'text':'Black','score': 10}, {'text': 'Blue','score':8}, {'text': 'Red','score' : 6}]
     },
     {
       'questionText': 'What is your favourite car?',
-      'answer': ['Golf', 'Edge', 'Lancer']
+      'answer': [{'text':'Golf','score': 10}, {'text': 'Edge','score':8}, {'text': 'Lancer','score' : 6}]
+
     },
   ];
   void answerQuestion() {
@@ -43,15 +44,9 @@ class MyAppState extends State<MyApp> {
           title: Text("My First Application"),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
-          children: [
-            Question(questionList[questionIndex]['questionText']),
-            ...(questionList[questionIndex]['answer'] as List<String>).map((answer){
-              return Answer(answerQuestion, answer);
-
-            }).toList()
-          ],
-        ),
+        body: questionIndex < questionList.length
+            ? Quiz(questionAnswer: answerQuestion,questionList: questionList,questionIndex: questionIndex,)
+            : Result(),
       ),
     );
   }
