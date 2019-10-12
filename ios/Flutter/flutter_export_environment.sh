@@ -1,11 +1,10 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/macbook12/development/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/macbook12/Applications/fluttertest"
-export "FLUTTER_TARGET=/Users/macbook12/Applications/fluttertest/lib/main.dart"
+export "FLUTTER_ROOT=/Users/mohammadabdelqader/development/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/mohammadabdelqader/development/flutterdemo/fluttertest"
+export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
-export "FLUTTER_FRAMEWORK_DIR=/Users/macbook12/development/flutter/bin/cache/artifacts/engine/ios"
+export "FLUTTER_FRAMEWORK_DIR=/Users/mohammadabdelqader/development/flutter/bin/cache/artifacts/engine/ios"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
-export "TRACK_WIDGET_CREATION=true"
