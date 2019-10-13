@@ -25,7 +25,7 @@ class MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'What is your favourite car?',
-      'answer': [{'text':'Golf','score': 8}, {'text': 'Edge','score':5}, {'text': 'Lancer','score' : 3}]
+      'answer': [{'text':'Golf','score': 15}, {'text': 'Edge','score':5}, {'text': 'Lancer','score' : 3}]
 
     },
   ];
@@ -39,6 +39,14 @@ class MyAppState extends State<MyApp> {
     });
   }
 
+    void resetQuiz() {
+    
+    setState(() {
+      questionIndex =0;
+      result=0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +57,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: questionIndex < questionList.length
             ? Quiz(questionAnswer: answerQuestion,questionList: questionList,questionIndex: questionIndex,)
-            : Result(result),
+            : Result(result,resetQuiz),
       ),
     );
   }

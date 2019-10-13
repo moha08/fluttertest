@@ -1,34 +1,42 @@
 import 'package:flutter/material.dart';
 
-class  Result extends StatelessWidget {
-  
+class Result extends StatelessWidget {
   final int finalResult;
-  
-  
-  Result(this.finalResult);
-    
+  final Function resetHandler;
 
-  String get finalResultText{
+  Result(this.finalResult, this.resetHandler);
+
+  String get finalResultText {
+    print(finalResult);
     String outputText;
-    if (this.finalResult > 20 ){
+    if (finalResult > 20) {
       outputText = "You need to learn";
-    }
-    else {
+    } else {
       outputText = "You are passed";
     }
     return outputText;
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Center(
-                child: Text(
-                  finalResultText,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.green[200],
-                  ),
-                ),
-              );
+      child: Column(
+        children: <Widget>[
+          Text(
+            finalResultText,
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.green[200],
+            ),
+          ),
+          FlatButton(
+            child:
+            Text("Reset Quiz"),
+            textColor: Colors.blue,
+            onPressed: resetHandler,
+          ),
+        ],
+      ),
+    );
   }
 }
