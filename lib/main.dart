@@ -28,7 +28,11 @@ class MyAppState extends State<MyApp> {
 
     },
   ];
-  void answerQuestion() {
+
+  int result;
+  void answerQuestion(int resultScore) {
+
+    result+=resultScore;
     setState(() {
       questionIndex = questionIndex + 1;
     });
@@ -46,7 +50,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: questionIndex < questionList.length
             ? Quiz(questionAnswer: answerQuestion,questionList: questionList,questionIndex: questionIndex,)
-            : Result(),
+            : Result(result),
       ),
     );
   }
