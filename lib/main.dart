@@ -17,6 +17,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   var questionIndex = 0;
+  var result = 0;
   final questionList = const [
     {
       'questionText': 'What is your favourite color?',
@@ -24,20 +25,18 @@ class MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'What is your favourite car?',
-      'answer': [{'text':'Golf','score': 10}, {'text': 'Edge','score':8}, {'text': 'Lancer','score' : 6}]
+      'answer': [{'text':'Golf','score': 8}, {'text': 'Edge','score':5}, {'text': 'Lancer','score' : 3}]
 
     },
   ];
 
-  int result;
+  
   void answerQuestion(int resultScore) {
 
     result+=resultScore;
     setState(() {
       questionIndex = questionIndex + 1;
     });
-
-    print(questionList[questionIndex]);
   }
 
   @override

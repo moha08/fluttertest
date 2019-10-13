@@ -6,10 +6,11 @@ class  Result extends StatelessWidget {
   
   
   Result(this.finalResult);
-  String outputText;
+    
 
-  get finalResultText{
-    if (this.finalResult > 10 ){
+  String get finalResultText{
+    String outputText;
+    if (this.finalResult > 20 ){
       outputText = "You need to learn";
     }
     else {
